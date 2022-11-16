@@ -1,38 +1,75 @@
-.App {
+
+.container{
   text-align: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.titleh1{
+  color: #000;
+  margin-bottom: 5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: justify;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column; 
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  width: 60%;
+  padding: 30px;
+  background: #eaebed;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
-.App-link {
-  color: #61dafb;
+.inputForm{
+  width: 20rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.dropdownForm{
+  width: 20rem;
+}
+
+.checkForm{
+  text-align: justify;
+}
+
+
+
+.Redes{
+  display: flex;
+}
+
+@media (min-width: 400px) and (max-width: 605px) {
+  .titleh1{
+    font-size: 1.3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .form{
+    width: 80%;
   }
 }
+
+@media (min-width: 320px) and (max-width: 399px){
+  .form{
+    width: 100%;
+  }
+  .titleh1{
+    font-size: 1.2rem;
+    margin-bottom: 10%;
+  }
+  .inputForm{
+    width: 15rem;
+    height: 3.5rem;
+  }
+  .dropdownForm{
+    width: 15rem;
+  }
+  
+}
+
