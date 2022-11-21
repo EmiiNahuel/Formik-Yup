@@ -11,6 +11,8 @@ export default function App() {
     setBandera(false)
   }
 
+  const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
+
   const [bandera, setBandera] = useState(false)
   const genres = [
     { key: 'masc', text:'Masculino', value:'masculino'},
@@ -32,7 +34,7 @@ export default function App() {
       firstname: Yup.string().required(),
       lastname: Yup.string().required(),
       email: Yup.string().email('Email invalido').required(true),
-      password: Yup.string().required(),
+      password: Yup.string().required(true).matches(passwordRules, {message: 'La contraseña debe tener minimo 5 caracteres,  1 minuscula, 1 mayuscula y 1 número'}),
       repeatPassword: Yup.string().required(true).oneOf([Yup.ref('password')], 'Las contraseñas no coinciden'),
       genres: Yup.string().required(true),
       accepted: Yup.bool().isTrue(true)
@@ -78,7 +80,7 @@ export default function App() {
         <Form.Input className='inputForm' type='password' name='password'
         label='Contraseña'  
         onChange={formik.handleChange} 
-        error={formik.errors.password && true }
+        error={formik.errors.password}
         value={formik.values.password}
         onBlur={formik.handleBlur}
         />
